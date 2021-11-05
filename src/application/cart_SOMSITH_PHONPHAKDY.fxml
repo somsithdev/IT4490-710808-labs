@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="49.0" fitWidth="44.0" layoutX="25.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../logo/248360897_3013779965550006_8329201397745446692_n.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="78.0" layoutY="16.0" prefHeight="62.0" prefWidth="231.0" text="CART" textFill="#3c7ac6">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <Pane layoutX="31.0" layoutY="86.0" prefHeight="654.0" prefWidth="932.0" style="-fx-border-color: gray;" AnchorPane.bottomAnchor="28.0">
+         <children>
+            <ImageView fitHeight="126.0" fitWidth="110.0" layoutX="29.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../logo/attachment_63768223.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="168.0" layoutY="41.0" text="Book3">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="169.0" layoutY="78.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="111.0" text="Delete">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Button>
+            <Label layoutX="692.0" layoutY="44.0" prefHeight="29.0" prefWidth="57.0" text="24 đ" textFill="#59b5f7">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Spinner layoutX="750.0" layoutY="52.0" prefHeight="32.0" prefWidth="154.0" />
+            <Label layoutX="691.0" layoutY="70.0" prefHeight="29.0" prefWidth="57.0" text="VND" textFill="#59b5f7">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="993.0" layoutY="91.0" text="Subtotal: ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="1003.0" layoutY="136.0" text="Amount:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="1103.0" layoutY="137.0" text="48 đ" textFill="#4a87f0">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="1103.0" layoutY="90.0" prefHeight="30.0" prefWidth="68.0" text="24 đ" textFill="#4a87f0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="1264.0" layoutY="144.0" text="VAT (10%)" textFill="#e34444">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="1009.0" layoutY="258.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="319.0" style="-fx-background-color: red;" text="Place order" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
