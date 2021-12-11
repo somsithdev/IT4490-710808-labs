@@ -1,4 +1,5 @@
-package common.exception;;
+package common.exception;
+import common.exception.PaymentException;
 
 public class InternalServerErrorException extends PaymentException {
 

@@ -2,7 +2,7 @@ package common.exception;;
 
 /**
  * The MediaUpdateException wraps all unchecked exceptions You can use this
- * exception to inform
+ * common.exception to inform
  * 
  * @author nguyenlm
  */

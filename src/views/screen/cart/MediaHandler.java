@@ -89,7 +89,11 @@ public class MediaHandler extends FXMLScreenHandler {
 				LOGGER.info("Deleted " + cartMedia.getMedia().getTitle() + " from the cart");
 			} catch (SQLException exp) {
 				exp.printStackTrace();
-				throw new ViewCartException();
+				try {
+					throw new ViewCartException();
+				} catch (ViewCartException viewCartException) {
+					viewCartException.printStackTrace();
+				}
 			}
 		});
 
@@ -122,7 +126,11 @@ public class MediaHandler extends FXMLScreenHandler {
 				cartScreen.updateCartAmount();
 
 			} catch (SQLException e1) {
-				throw new MediaUpdateException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
+				try {
+					throw new MediaUpdateException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
+				} catch (MediaUpdateException mediaUpdateException) {
+					mediaUpdateException.printStackTrace();
+				}
 			}
 			
 		});

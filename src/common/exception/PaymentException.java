@@ -1,6 +1,6 @@
 package common.exception;;
 
-public class PaymentException extends RuntimeException {
+public class PaymentException extends Exception {
 	public PaymentException(String message) {
 		super(message);
 	}

@@ -1,18 +1,11 @@
-package common.exception;;
+package common.exception;
 
-/**
- * The AimsException wraps all unchecked exceptions You can use this
- * exception to inform
- * 
- * @author nguyenlm
- */
-public class AimsException extends RuntimeException {
-
+public class AimsException extends Exception {
     public AimsException() {
 
-	}
+    }
 
-	public AimsException(String message) {
-		super(message);
-	}
+    public AimsException(String message) {
+        super(message);
+    }
 }

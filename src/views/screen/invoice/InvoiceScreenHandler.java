@@ -81,7 +81,11 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 				vboxItems.getChildren().add(mis.getContent());
 			} catch (IOException | SQLException e) {
 				System.err.println("errors: " + e.getMessage());
-				throw new ProcessInvoiceException(e.getMessage());
+				try {
+					throw new ProcessInvoiceException(e.getMessage());
+				} catch (ProcessInvoiceException processInvoiceException) {
+					processInvoiceException.printStackTrace();
+				}
 			}
 			
 		});

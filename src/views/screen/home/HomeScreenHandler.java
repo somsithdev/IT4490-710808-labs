@@ -113,7 +113,11 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
                 cartScreen.setBController(new ViewCartController());
                 cartScreen.requestToViewCart(this);
             } catch (IOException | SQLException e1) {
-                throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
+                try {
+                    throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
+                } catch (ViewCartException viewCartException) {
+                    viewCartException.printStackTrace();
+                }
             }
         });
         addMediaHome(this.homeItems);

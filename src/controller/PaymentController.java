@@ -35,11 +35,11 @@ public class PaymentController extends BaseController {
 
 	/**
 	 * Validate the input date which should be in the format "mm/yy", and then
-	 * return a {@link java.lang.String String} representing the date in the
+	 * return a {@link String String} representing the date in the
 	 * required format "mmyy" .
 	 * 
-	 * @param date - the {@link java.lang.String String} represents the input date
-	 * @return {@link java.lang.String String} - date representation of the required
+	 * @param date - the {@link String String} represents the input date
+	 * @return {@link String String} - date representation of the required
 	 *         format
 	 * @throws InvalidCardException - if the string does not represent a valid date
 	 *                              in the expected format
@@ -78,7 +78,7 @@ public class PaymentController extends BaseController {
 	 * @param cardHolderName - the card holder name
 	 * @param expirationDate - the expiration date in the format "mm/yy"
 	 * @param securityCode   - the cvv/cvc code of the credit card
-	 * @return {@link java.util.Map Map} represent the payment result with a
+	 * @return {@link Map Map} represent the payment result with a
 	 *         message.
 	 */
 	public Map<String, String> payOrder(int amount, String contents, String cardNumber, String cardHolderName,

@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -10,7 +8,9 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import utils.Configs;
-import views.screen.home.*;
+import views.screen.home.HomeScreenHandler;
+
+import java.io.IOException;
 
 public class App extends Application {
 

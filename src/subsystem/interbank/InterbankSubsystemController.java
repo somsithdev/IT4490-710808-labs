@@ -1,20 +1,13 @@
 package subsystem.interbank;
 
-import java.util.Map;
-
-import common.exception.InternalServerErrorException;
-import common.exception.InvalidCardException;
-import common.exception.InvalidTransactionAmountException;
-import common.exception.InvalidVersionException;
-import common.exception.NotEnoughBalanceException;
-import common.exception.NotEnoughTransactionInfoException;
-import common.exception.SuspiciousTransactionException;
-import common.exception.UnrecognizedException;
+import common.exception.*;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 import utils.Configs;
 import utils.MyMap;
 import utils.Utils;
+
+import java.util.Map;
 
 public class InterbankSubsystemController {
 
@@ -33,7 +26,7 @@ public class InterbankSubsystemController {
 		return ((MyMap) data).toJSON();
 	}
 
-	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
+	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) throws InvalidCardException, NotEnoughBalanceException, NotEnoughTransactionInfoException, InvalidVersionException, InternalServerErrorException, SuspiciousTransactionException, InvalidTransactionAmountException {
 		Map<String, Object> transaction = new MyMap();
 
 		try {
@@ -50,8 +43,9 @@ public class InterbankSubsystemController {
 		Map<String, Object> requestMap = new MyMap();
 		requestMap.put("version", VERSION);
 		requestMap.put("transaction", transaction);
-
-		String responseText = interbankBoundary.query(Configs.PROCESS_TRANSACTION_URL, generateData(requestMap));
+		//demo token
+		String token = "BZAx9jSdTwo";
+		String responseText = interbankBoundary.query(Configs.PROCESS_TRANSACTION_URL, generateData(requestMap), token);
 		MyMap response = null;
 		try {
 			response = MyMap.toMyMap(responseText, 0);
@@ -63,7 +57,7 @@ public class InterbankSubsystemController {
 		return makePaymentTransaction(response);
 	}
 
-	private PaymentTransaction makePaymentTransaction(MyMap response) {
+	private PaymentTransaction makePaymentTransaction(MyMap response) throws InvalidCardException, NotEnoughBalanceException, InternalServerErrorException, SuspiciousTransactionException, NotEnoughTransactionInfoException, InvalidVersionException, InvalidTransactionAmountException {
 		if (response == null)
 			return null;
 		MyMap transcation = (MyMap) response.get("transaction");
